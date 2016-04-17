@@ -10,7 +10,7 @@ import java.util.HashMap;
  */
 public class EmployeeRepoImplimentation implements IEmployeeRepository {
     private Employee objSearchValues;
-    //Map employeeMap = new HashMap();
+
     HashMap<String,Employee> employeeMap = new HashMap<String, Employee>();
 
     public Employee finfBYId(String employeeId) {

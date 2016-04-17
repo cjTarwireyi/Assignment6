@@ -22,7 +22,7 @@ public class TestEmployeeRepo {
     @Before
     public void setUp() throws Exception {
         objEmpRepo = new EmployeeRepoImplimentation();
-        objEmplFactory= new EmployeeFactoryImpl();
+        objEmplFactory= new EmployeeFactoryImpl().getInstance();
     }
 
     @Test
@@ -37,6 +37,7 @@ public class TestEmployeeRepo {
     @Test
     public void testFindByID() throws Exception {
         Employee objEmployee =objEmplFactory.createEmployee("123","Cornelious","Tarwireyi");
+        objEmpRepo.addEmployee(objEmployee);
         Employee objFoundEmployee=objEmpRepo.finfBYId("123");
         Assert.assertSame("123",objFoundEmployee.getEmpId());
 
@@ -45,9 +46,15 @@ public class TestEmployeeRepo {
     @Test
     public void testRemoveEmployee() throws Exception {
         Employee objEmployee =objEmplFactory.createEmployee("123", "Cornelious", "Tarwireyi");
-        objEmpRepo.remove("123");
+        objEmpRepo.addEmployee(objEmployee);
+//testing before removing
         Employee objFoundEmployee=objEmpRepo.finfBYId("123");
-        Assert.assertEquals(null, objFoundEmployee);
+        Assert.assertNotNull(objFoundEmployee);
+
+        objEmpRepo.remove("123");
+        //testing  after removing
+        Employee objFoundEmployee2=objEmpRepo.finfBYId("123");
+        Assert.assertNull( objFoundEmployee2);
 
 
     }
