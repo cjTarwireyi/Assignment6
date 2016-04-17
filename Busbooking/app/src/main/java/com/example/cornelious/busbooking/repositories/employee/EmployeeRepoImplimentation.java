@@ -41,7 +41,9 @@ public class EmployeeRepoImplimentation implements IEmployeeRepository {
     }
 
     @Override
-    public void remove(Employee objEmployee) {
-        employeeMap.remove(objEmployee.getEmpId());
+    public void remove(String key) {
+
+        employeeMap.remove(key);
+
     }
 }

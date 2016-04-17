@@ -8,5 +8,5 @@ import com.example.cornelious.busbooking.domain.employee.Employee;
 public interface IEmployeeRepository {
     Employee finfBYId(String employeeId);
     String addEmployee(Employee objEmployee);
-    void remove(Employee objEmployee);
+    void remove(String key);
 }

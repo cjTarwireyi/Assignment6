@@ -33,4 +33,22 @@ public class TestEmployeeRepo {
 
 
     }
+
+    @Test
+    public void testFindByID() throws Exception {
+        Employee objEmployee =objEmplFactory.createEmployee("123","Cornelious","Tarwireyi");
+        Employee objFoundEmployee=objEmpRepo.finfBYId("123");
+        Assert.assertSame("123",objFoundEmployee.getEmpId());
+
+    }
+
+    @Test
+    public void testRemoveEmployee() throws Exception {
+        Employee objEmployee =objEmplFactory.createEmployee("123", "Cornelious", "Tarwireyi");
+        objEmpRepo.remove("123");
+        Employee objFoundEmployee=objEmpRepo.finfBYId("123");
+        Assert.assertEquals(null, objFoundEmployee);
+
+
+    }
 }

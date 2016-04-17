@@ -18,6 +18,7 @@ import org.junit.runners.Suite;
     @Suite.SuiteClasses({
             TestBooking.class,
             TestBusFactory.class,
+            TestBusFactory.class,
             TestAddressFactory.class,
             TestEmployeeFactory.class,
             TestAddressFactory.class,
