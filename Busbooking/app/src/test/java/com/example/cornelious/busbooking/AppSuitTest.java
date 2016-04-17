@@ -5,6 +5,7 @@ import com.example.cornelious.busbooking.busTest.TestBusFactory;
 import com.example.cornelious.busbooking.employeetest.TestAddressFactory;
 import com.example.cornelious.busbooking.employeetest.TestEmployeeFactory;
 import com.example.cornelious.busbooking.passengertest.TestPassengerFactoryimpl;
+import com.example.cornelious.busbooking.repositories.TestEmployeeAddressRepo;
 import com.example.cornelious.busbooking.repositories.TestEmployeeRepo;
 import com.example.cornelious.busbooking.repositories.TestPassengerRepo;
 
@@ -25,6 +26,7 @@ import org.junit.runners.Suite;
             TestAddressFactory.class,
             TestPassengerFactoryimpl.class,
             TestEmployeeRepo.class,
+            TestEmployeeAddressRepo.class,
             TestPassengerRepo.class
     })
     public class AppSuitTest {
